@@ -12,9 +12,18 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<NoteContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("NotesConnection")));
 builder.Services.AddScoped<INoteRepository, NoteRepository>();
 builder.Services.AddScoped<ITagRepository, TagRepository>();
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod() // Allows DELETE, GET, POST, etc.
+               .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
+app.UseCors("AllowAll");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -26,6 +35,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
 
 app.MapControllers();
 

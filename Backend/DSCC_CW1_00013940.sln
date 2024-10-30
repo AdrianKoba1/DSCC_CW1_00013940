@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSCC_CW1_00013940", "DSCC_CW1_00013940.csproj", "{0BE80E09-CF5F-429F-9CF8-1DF982CC8216}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSCC_CW1_00013940", "DSCC_CW1_00013940.csproj", "{0BE80E09-CF5F-429F-9CF8-1DF982CC8216}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend_MVC_00013940", "..\Frontend\Frontend_MVC_00013940\Frontend_MVC_00013940.csproj", "{EC809884-F5DB-48A8-AAE3-1D4D31B79777}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0BE80E09-CF5F-429F-9CF8-1DF982CC8216}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BE80E09-CF5F-429F-9CF8-1DF982CC8216}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BE80E09-CF5F-429F-9CF8-1DF982CC8216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC809884-F5DB-48A8-AAE3-1D4D31B79777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC809884-F5DB-48A8-AAE3-1D4D31B79777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC809884-F5DB-48A8-AAE3-1D4D31B79777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC809884-F5DB-48A8-AAE3-1D4D31B79777}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

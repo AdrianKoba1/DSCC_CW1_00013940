@@ -4,6 +4,7 @@ using DSCC_CW1_00013940.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DSCC_CW1_00013940.Migrations
 {
     [DbContext(typeof(NoteContext))]
-    partial class NoteContextModelSnapshot : ModelSnapshot
+    [Migration("20241029131639_AddTagIdToNote")]
+    partial class AddTagIdToNote
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,11 +39,16 @@ namespace DSCC_CW1_00013940.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("TagId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("TagId");
 
                     b.ToTable("Notes");
                 });
@@ -63,34 +70,13 @@ namespace DSCC_CW1_00013940.Migrations
                     b.ToTable("Tags");
                 });
 
-            modelBuilder.Entity("NoteTag", b =>
+            modelBuilder.Entity("DSCC_CW1_00013940.Models.Note", b =>
                 {
-                    b.Property<int>("NotesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TagsId")
-                        .HasColumnType("int");
-
-                    b.HasKey("NotesId", "TagsId");
-
-                    b.HasIndex("TagsId");
-
-                    b.ToTable("NoteTag");
-                });
-
-            modelBuilder.Entity("NoteTag", b =>
-                {
-                    b.HasOne("DSCC_CW1_00013940.Models.Note", null)
+                    b.HasOne("DSCC_CW1_00013940.Models.Tag", "Tag")
                         .WithMany()
-                        .HasForeignKey("NotesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TagId");
 
-                    b.HasOne("DSCC_CW1_00013940.Models.Tag", null)
-                        .WithMany()
-                        .HasForeignKey("TagsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Tag");
                 });
 #pragma warning restore 612, 618
         }

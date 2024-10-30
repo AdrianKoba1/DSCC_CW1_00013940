@@ -54,8 +54,10 @@ public class NotesController : ControllerBase
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteNoteById(int id)
     {
-        await _noteRepository.DeleteNote(id);
+        var note = await _noteRepository.GetNoteById(id);
+        if (note == null) return NotFound();
 
+        await _noteRepository.DeleteNote(id);
         return NoContent();
     }
 }

@@ -11,6 +11,8 @@ namespace DSCC_CW1_00013940.Models
 
         public DateTime DateCreated { get; set; } = DateTime.Now;
 
+        public int? TagId { get; set; }
+
         [ForeignKey("TagId")]
         public Tag? Tag { get; set; }
     }
