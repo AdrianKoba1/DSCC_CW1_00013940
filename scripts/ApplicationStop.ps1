@@ -1,1 +1,2 @@
-Write-Output "ApplicationStop script is running."
+#!/bin/bash
+echo "Stopping backend application on Ubuntu"

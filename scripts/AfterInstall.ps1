@@ -1,1 +1,2 @@
-Write-Output "AfterInstall script is running."
+#!/bin/bash
+echo "AfterInstall script is running on Ubuntu."

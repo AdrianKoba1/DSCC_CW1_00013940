@@ -1,1 +1,2 @@
-Write-Output "BeforeInstall script is running."
+#!/bin/bash
+echo "BeforeInstall script is running on Ubuntu."

@@ -1,1 +1,2 @@
-Write-Output "ApplicationStart script is running."
+#!/bin/bash
+echo "Starting backend application on Ubuntu"
