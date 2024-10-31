@@ -2,21 +2,21 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/backend-00013940
+    destination: /home/ubuntu/backend-00013940
 hooks:
   BeforeInstall:
     - location: scripts/BeforeInstall.sh
       timeout: 300
-      runas: ec2-user
+      runas: ubuntu
   AfterInstall:
     - location: scripts/AfterInstall.sh
       timeout: 300
-      runas: ec2-user
+      runas: ubuntu
   ApplicationStart:
     - location: scripts/ApplicationStart.sh
       timeout: 300
-      runas: ec2-user
+      runas: ubuntu
   ApplicationStop:
     - location: scripts/ApplicationStop.sh
       timeout: 300
-      runas: ec2-user
+      runas: ubuntu
